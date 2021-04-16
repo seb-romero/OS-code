@@ -7,20 +7,22 @@ int main(int argc, char** argv)
 {
     char cadena[255];
     
-    printf(":| &> ");
-    fgets(cadena, sizeof(cadena), stdin);
+   while (cadena != "exit"){
+        printf(":| &> ");
+        fgets(cadena, sizeof(cadena), stdin);
 
-    cadena[strlen(cadena)] = '\x0';
-    printf("comando: ");
-    puts(cadena);
+        cadena[strlen(cadena)] = '\x0';
+        printf("comando: ");
+        puts(cadena);
 
-    char *p = cadena;
-    while(*p != '\0')
-    {
-        printf("%c\n", *p);
-        p++;
-    }
+        char *p = cadena;
+        while(*p != '\0')
+        {
+            printf("%c\n", *p);
+            p++;
+        }
     //execvp(cadena[0], cadena);
+    }
 
     return 0;
 }
